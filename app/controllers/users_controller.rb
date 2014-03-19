@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter  :verify_authenticity_token, only: [:create,:update,:destroy]
+  #skip_before_filter  :verify_authenticity_token, only: [:create,:update,:destroy]
 
   respond_to :json, :html
 
