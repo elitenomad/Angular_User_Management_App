@@ -1,5 +1,5 @@
 == README
 
-Simple Usermanagement Tool build with 
-  Angular as Front End
-  Rails as back end.
+Simple Usermanagement Tool built with 
+  Angular JS
+  Ruby on Rails
