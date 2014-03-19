@@ -1,0 +1,73 @@
+<h2>User Management</h2>
+<hr/>
+
+<div class="container" ng-controller="UserController">
+  <button ng-click="addUser()" class="btn btn-default">New User Form</button>
+  <br/>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <form id="replyForm" ng-submit="createUser()" ng-show="userform">
+          <div class="formgroup">
+            <input type="text" ng-model="user.firstname" class="formcontrol" placeholder="Firstname">
+          </div>
+          <div class="formgroup">
+            <input type="text" ng-model="user.lastname" class="formcontrol" placeholder="Lastname">
+          </div>
+          <div class="formgroup">
+            <input type="number" ng-model="user.age" class="formcontrol" placeholder="Age">
+          </div>
+          <div class="formgroup">
+            <input type="text" ng-model="user.job" class="formcontrol" placeholder="Job">
+          </div>
+          <br/>
+          <button type="submit" class="btn btn-primary" >Create User</button>
+      </form>
+
+        <form id="updateForm" ng-submit="updateUser(user)" ng-show="updateform">
+          <div class="formgroup">
+            <input type="text" ng-model="user.firstname" class="formcontrol" placeholder="Firstname">
+          </div>
+          <div class="formgroup">
+            <input type="text" ng-model="user.lastname" class="formcontrol" placeholder="Lastname">
+          </div>
+          <div class="formgroup">
+            <input type="number" ng-model="user.age" class="formcontrol" placeholder="Age">
+          </div>
+          <div class="formgroup">
+            <input type="text" ng-model="user.job" class="formcontrol" placeholder="Job">
+          </div>
+          <br/>
+
+          <button type="submit" class="btn btn-primary" >Update User</button>
+        </form>
+    </div>
+  </div>
+  </div>
+  <br/>
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Age</th>
+          <th>Job</th>
+          <th><img src="/assets/spinner_32.gif" ng-show="inprogress" /></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users">
+          <td>{{ user.firstname }}</td>
+          <td>{{ user.lastname }}</td>
+          <td>{{ user.age }}</td>
+          <td>{{ user.job }}</td>
+          <td><button class="btn btn-sm" ng-click="editUser(user.id)">Edit</button> <button class="btn btn-sm" ng-click="deleteUser(user.id)">Delete</button></td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+
